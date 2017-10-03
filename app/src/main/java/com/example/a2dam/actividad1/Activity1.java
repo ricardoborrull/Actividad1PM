@@ -29,6 +29,7 @@ public class Activity1 extends AppCompatActivity {
             public void onClick(View v) {
                 Log.d(TAG, "Nombre: "+edNom.getText()+"\nApellidos: "+edApe.getText());
                 Intent i = new Intent(getApplicationContext(), Activity2.class);
+                i.putExtra("Nombre", edNom.getText());
                 startActivity(i);
             }
         });

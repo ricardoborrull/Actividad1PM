@@ -32,7 +32,7 @@
             android:id="@+id/textView7"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="Hola @nom @ape,"
+            android:text="Hola"
             android:textSize="18sp"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="170dp" />
