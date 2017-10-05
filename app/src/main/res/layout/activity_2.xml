@@ -29,7 +29,7 @@
             tools:layout_editor_absoluteY="81dp" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/Bienvenido"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="Hola"
@@ -56,7 +56,7 @@
             tools:layout_editor_absoluteY="241dp" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/edEdad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -69,13 +69,28 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.13" />
 
-        <Button
-            android:id="@+id/button"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Más Info"
-            tools:layout_editor_absoluteX="161dp"
-            tools:layout_editor_absoluteY="333dp" />
+            android:layout_weight="0.13"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="Cancelar" />
+
+            <Button
+                android:id="@+id/btnNext"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="Siguiente"
+                tools:layout_editor_absoluteX="161dp"
+                tools:layout_editor_absoluteY="333dp" />
+        </LinearLayout>
 
     </LinearLayout>
 

@@ -47,7 +47,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="20dp" />
 
         <TextView
             android:id="@+id/textView3"
@@ -69,7 +69,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="20dp" />
 
         <TextView
             android:id="@+id/textView5"
@@ -80,25 +80,30 @@
             tools:layout_editor_absoluteX="40dp"
             tools:layout_editor_absoluteY="268dp" />
 
-        <RadioButton
-            android:id="@+id/radioButton"
+        <RadioGroup
+            android:id="@+id/rgSexo"
             android:layout_width="match_parent"
-            android:layout_height="32dp"
-            android:text="Hombre"
-            tools:layout_editor_absoluteX="123dp"
-            tools:layout_editor_absoluteY="268dp" />
+            android:layout_height="50dp"
+            android:checkedButton="@+id/hombre">
 
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:text="Mujer"
-            tools:layout_editor_absoluteX="231dp"
-            tools:layout_editor_absoluteY="268dp" />
+            <RadioButton
+                android:id="@+id/hombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Hombre" />
+
+            <RadioButton
+                android:id="@+id/mujer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Mujer" />
+        </RadioGroup>
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="20dp" />
 
         <Button
             android:id="@+id/botonMI"
@@ -107,6 +112,17 @@
             android:text="Más Info"
             tools:layout_editor_absoluteX="161dp"
             tools:layout_editor_absoluteY="333dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:id="@+id/msg"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:textSize="20sp" />
 
     </LinearLayout>
 
