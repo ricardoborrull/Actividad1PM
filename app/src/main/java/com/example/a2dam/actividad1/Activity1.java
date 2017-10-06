@@ -42,20 +42,12 @@ public class Activity1 extends AppCompatActivity {
                 Intent i = new Intent(getApplicationContext(), Activity2.class);
                 i.putExtra("Nombre", edNom.getText());
                 i.putExtra("Apellido", edApe.getText());
-                if (hombre.isSelected()) {
-                    i.putExtra("Sexo", hombre.getText());
-                }
-                if (mujer.isSelected()) {
-                    i.putExtra("Sexo", mujer.getText());
-                }
 
-                if (edNom == null) {
-                    if (edApe == null) {
-                        Toast.makeText(getApplicationContext(), "Introduce todos los datos para poder continuar.", Toast.LENGTH_LONG).show();
-                    }
+                if (edNom.getText().toString().replace(" ", "").equals("") || edApe.getText().toString().replace(" ", "").equals("")) {
+                    Toast.makeText(getApplicationContext(), "Introduce todos los datos para poder continuar.", Toast.LENGTH_LONG).show();
+                } else {
+                    startActivityForResult(i, SUBACT_1);
                 }
-
-                startActivityForResult(i, SUBACT_1);
             }
         });
     }
@@ -65,30 +57,30 @@ public class Activity1 extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == SUBACT_1) {
             if (resultCode == RESULT_OK) {
+
                 botonMI.setEnabled(false);
                 hombre.setEnabled(false);
                 mujer.setEnabled(false);
                 edApe.setEnabled(false);
                 edNom.setEnabled(false);
 
-                int edad = Integer.parseInt(String.valueOf(data.getCharSequenceExtra("Edad")));
-                if (edad < 0) {
-                    msg.setText("La edad no es válida");
-                    if (edad > 0 && edad < 18) {
+                String e = data.getStringExtra("Edad");
+                int edad = Integer.parseInt(e);
+
+                    if (edad >= 0 && edad < 18) {
                         msg.setText("Eres menor de edad");
+                    } else {
                         if (edad > 18 && edad < 35) {
                             msg.setText("Ya eres mayor de edad");
+                        } else {
                             if (edad >= 35) {
                                 msg.setText("Ay, ay, ay...");
                             }
                         }
                     }
-                    //msg.setText("Tienes " + data.getCharSequenceExtra("Edad") + " años");
-                    Toast.makeText(this, "¡COMPLETADO!", Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(this, "CANCELADO", Toast.LENGTH_LONG).show();
                 }
+                    Toast.makeText(this, "¡COMPLETADO!", Toast.LENGTH_LONG).show();
             }
         }
     }
-}
+

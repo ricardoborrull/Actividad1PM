@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Activity2 extends AppCompatActivity {
 
@@ -41,11 +42,14 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent edad = new Intent();
-                edad.putExtra("Edad", edEdad.getText());
-                setResult(RESULT_OK, edad);
-                finish();
+                if (edEdad.getText().toString().equals("")) {
+                    Toast.makeText(getApplicationContext(), "Introduce todos los datos para poder continuar.", Toast.LENGTH_LONG).show();
+                } else {
+                    edad.putExtra("Edad", edEdad.getText().toString());
+                    setResult(RESULT_OK, edad);
+                    finish();
+                }
             }
         });
-
     }
 }
